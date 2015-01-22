@@ -521,6 +521,9 @@ require_once("$IP/../extensions/SimpleAntiSpam/SimpleAntiSpam.php");
 # bug 855309
 require_once("$IP/../extensions/SubPageList/SubPageList.php");
 
+# bug 1044583
+require_once("$IP/../extensions/Widgets/Widgets.php");
+
 $wgAllowExternalImages  = true;
 
 ######### Bug 397718 ############
