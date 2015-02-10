@@ -10,4 +10,5 @@ secrets.php
 /extensions/SubPageList/
 /extensions/Validator/
 
-
+images
+php_sessions
