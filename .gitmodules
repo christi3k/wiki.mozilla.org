@@ -101,3 +101,6 @@
 	path = extensions/Widgets
 	url = https://github.com/MozillaWiki/mediawiki-widgets.git
 	branch = REL1_23
+[submodule "extensions/Bugaboo"]
+	path = extensions/Bugaboo
+	url = git@github.com:christi3k/bugaboo.git
