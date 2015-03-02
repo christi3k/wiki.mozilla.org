@@ -635,4 +635,9 @@ $wgPFEnableStringFunctions = true;
 
 require_once("$IP/../extensions/Widgets/Widgets.php");
 
+require_once("$IP/../extensions/Mantle/Mantle.php");
+require_once("$IP/../extensions/MobileFrontend/MobileFrontend.php");
+$wgMFAutodetectMobileView = true;
+$wgMobileFrontendLogo = "$wgStylePath/../assets/logos/$SECRETS_wgMobileFrontendLogo";
+
 // EOF
