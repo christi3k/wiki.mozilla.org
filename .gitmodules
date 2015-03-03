@@ -103,3 +103,11 @@
 [submodule "extensions/Mantle"]
 	path = extensions/Mantle
 	url = https://git.wikimedia.org/git/mediawiki/extensions/Mantle.git
+[submodule "extensions/UniversalLanguageSelector"]
+	path = extensions/UniversalLanguageSelector
+	url = https://git.wikimedia.org/git/mediawiki/extensions/UniversalLanguageSelector.git
+	branch = REL1_23
+[submodule "extensions/Parsoid"]
+	path = extensions/Parsoid
+	url = https://git.wikimedia.org/git/mediawiki/extensions/Parsoid.git
+	branch = REL1_23

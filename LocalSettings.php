@@ -640,4 +640,19 @@ require_once("$IP/../extensions/MobileFrontend/MobileFrontend.php");
 $wgMFAutodetectMobileView = true;
 $wgMobileFrontendLogo = "$wgStylePath/../assets/logos/$SECRETS_wgMobileFrontendLogo";
 
+require_once "$IP/../extensions/UniversalLanguageSelector/UniversalLanguageSelector.php";
+require_once "$IP/../extensions/Parsoid/Parsoid.php";
+
+require_once "$IP/../extensions/VisualEditor/VisualEditor.php";
+
+// Enable by default for everybody
+$wgDefaultUserOptions['visualeditor-enable'] = 1;
+
+$wgVisualEditorParsoidURL = 'http://localhost:8142';
+
+$wgVisualEditorParsoidHTTPProxy = false;
+ 
+// Interwiki prefix to pass to the Parsoid instance
+// Parsoid will be called as $url/$prefix/$pagename
+$wgVisualEditorParsoidPrefix = 'localhost';
 // EOF
