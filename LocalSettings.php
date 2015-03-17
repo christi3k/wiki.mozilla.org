@@ -637,4 +637,5 @@ require_once("$IP/../extensions/GraphViz/GraphViz.php");
 $wgGraphVizSettings->defaultImageType = 'svg';
 
 require_once "$IP/../extensions/TitleBlacklist/TitleBlacklist.php";
+require_once "$IP/../extensions/ImportFromEtherpad/ImportFromEtherpad.php";
 // EOF
