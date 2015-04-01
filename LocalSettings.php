@@ -637,5 +637,24 @@ require_once("$IP/../extensions/GraphViz/GraphViz.php");
 $wgGraphVizSettings->defaultImageType = 'svg';
 
 require_once "$IP/../extensions/TitleBlacklist/TitleBlacklist.php";
+
 require_once "$IP/../extensions/ImportFromEtherpad/ImportFromEtherpad.php";
+
+// these regexs replace strings in the converted mediawiki content
+$wgImportFromEtherpadSettings->contentRegexs[] = array("\[https?:\/\/wiki\.mozilla\.org\/Category:(.+?) https?:\/\/wiki\.mozilla\.org\/Category:(.+?)\]","[[:$1]]");
+$wgImportFromEtherpadSettings->contentRegexs[] = array("\[https?:\/\/wiki\.mozilla\.org\/(.+?) https?:\/\/wiki\.mozilla\.org\/(.+?)\]","[[$1]]");
+$wgImportFromEtherpadSettings->contentRegexs[] = array("https?:\/\/wiki\.mozilla\.org\/Category:(.+?)\s","[[:Category:$1]] ");
+$wgImportFromEtherpadSettings->contentRegexs[] = array("https?:\/\/wiki\.mozilla\.org\/(.+?)\s","[[$1]] ");
+$wgImportFromEtherpadSettings->contentRegexs[] = array("\[https?:\/\/bugzilla\.mozilla\.org\/show_bug\.cgi\?id=(.+?) https?:\/\/bugzilla\.mozilla\.org\/show_bug\.cgi\?id=(.+?)\]","{{bug|$1}}");
+$wgImportFromEtherpadSettings->contentRegexs[] = array("https?:\/\/bugzilla\.mozilla\.org\/show_bug\.cgi\?id=(.+?)\s","{{bug|$1}} ");
+
+// add new rules to top of regex stack
+array_unshift($wgImportFromEtherpadSettings->hostRegexs, 
+  array('wiki\.etherpad\.mozilla\.org','MozillaWiki:'), 
+  array('remo\.etherpad\.mozilla\.org','ReMo/'), 
+  array('pad\.webmaker\.org','Webmaker/'), 
+  array('(\w+).etherpad\.mozilla\.org','$1/')
+);
+
+$wgImportFromEtherpadSettings->pathRegexs[] = array('(\w+)\s+(\d+)\s+(\d+)\s+(\d+)','$1 $2-$3-$4');
 // EOF
