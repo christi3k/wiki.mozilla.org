@@ -653,11 +653,14 @@ $wgImportFromEtherpadSettings->contentRegexs[] = array("\[https?:\/\/bugzilla\.m
 
 // add new rules to top of regex stack
 array_unshift($wgImportFromEtherpadSettings->hostRegexs, 
-  array('wiki\.etherpad\.mozilla\.org','MozillaWiki:'), 
+  array('wiki\.etherpad\.mozilla\.org',''), 
   array('remo\.etherpad\.mozilla\.org','ReMo/'), 
+  array('releng\.etherpad\.mozilla\.org','RelEng/'), 
   array('pad\.webmaker\.org','Webmaker/'), 
   array('(\w+).etherpad\.mozilla\.org','$1/')
 );
 
 $wgImportFromEtherpadSettings->pathRegexs[] = array('(\w+)\s+(\d+)\s+(\d+)\s+(\d+)','$1 $2-$3-$4');
+
+$wgImportFromEtherpadSettings->nsRegexs[] = array('wiki\.etherpad\.mozilla\.org','4');
 // EOF
